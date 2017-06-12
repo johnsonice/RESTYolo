@@ -1,25 +1,25 @@
 ### Yolo model rest service 
 
 ##### dependencies
-'''
+```
 pip install Django==1.11 djangorestframework==3.62
-'''
+```
 
 ##### install yolomodel 
-'''
+```
 cd yolo
 git pull https://github.com/johnsonice/yolomodel.git
-'''
+```
 please follow yolomodel repo and make sure environment is properly set up 
 
 #### run server 
-'''
+```
 cd [RESTYolo root]
 python python manage.py runserver 0.0.0.0:8080
-'''
+```
 
 #### sample request 
-'''
+```
 import requests
 import os
 import ast
@@ -33,4 +33,4 @@ resp = requests.post(put_url,data=files['file'])
 #### convert byte response to dictionray 
 result = ast.literal_eval(resp.content.decode())
 print(result)
-'''
+```
