@@ -13,6 +13,8 @@ from . import serializers
 from .yolomodel import yolo_model
 import json
 import os
+import cv2
+import numpy as np
 yolo=yolo_model.yolo()
 yolo.load()
 
