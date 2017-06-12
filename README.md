@@ -28,7 +28,7 @@ url = "http://0.0.0.0:8080/yolo/api/upload/"
 upfile = "preview.png"
 put_url = os.path.join(url,upfile)
 files = {'file': open(upfile,'rb')}
-resp = requests.post(put_url,data=files['file'])
+resp = requests.post(put_url,data=files['file']) ## upload file and return coordinates
 
 #### convert byte response to dictionray 
 result = ast.literal_eval(resp.content.decode())
