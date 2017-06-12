@@ -8,7 +8,7 @@ pip install Django==1.11 djangorestframework==3.62
 ##### install yolomodel 
 ```
 cd yolo
-git pull https://github.com/johnsonice/yolomodel.git
+git clone https://github.com/johnsonice/yolomodel.git
 ```
 please follow yolomodel repo and make sure environment is properly set up 
 
