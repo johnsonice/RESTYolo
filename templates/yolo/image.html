@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Sample "Hello, World" Application</title>
+    <link rel="stylesheet" href="{% static "css/yolo.css" %}"/>
+  </head>
+  <body>
+      <h1>Show Image!</h1>
+      <p>{{img_path}}</p>
+      <img src="{% static "images/preview.png"%}" alt="image not loaded">
+      <img src="{% static "{{img_path}}"%}" alt="image not loaded">
+  </body>
+</html>

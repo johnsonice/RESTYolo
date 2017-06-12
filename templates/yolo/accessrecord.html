@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Sample "Hello, World" Application</title>
+    <link rel="stylesheet" href="{% static "css/yolo.css" %}"/>
+  </head>
+  <body>
+      <h1>Welcome to Access Records Page</h1>
+      <h2>Here is your access records:</h2>
+      <div class='accessrecord'>
+          {% if access_record %}
+          <table>
+              <thead>
+                  <th>Site Name</th>
+                  <th>Date Accessed</th>               
+              </thead>
+          {% for acc in access_record %}
+              <tr>
+                  <td>{{acc.name}}</td>
+                  <td>{{acc.date}}</td>
+              </tr>
+          {% endfor%}
+          </table>
+          {% else %}
+            <p>No Access Records Found!</p>
+          {% endif %}
+      </div>  
+      
+      
+  </body>
+</html>

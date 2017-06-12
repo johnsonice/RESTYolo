@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Sample "Hello, World" Application</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional Bootstrap theme -->
+
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Upload Image!</h1>
+            <form method="POST" enctype='multipart/form-data'>
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </form>
+            <div class="container">
+                <p>Input image</p>
+                <img src="{% static "images/in/test.jpg"%}" height=50% width=50% alt="image not loaded">
+            </div>
+            <div class="container">
+                <p>Output Image</p>
+                <img src="{% static "images/out/test.jpg"%}" height=50% width=50% alt="image not loaded">
+                <p>{{result}}</p>
+            </div>
+        </div>
+    </body>
+</html>
