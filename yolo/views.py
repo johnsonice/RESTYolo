@@ -40,7 +40,9 @@ class FileUploadView(APIView):
     parser_classes = (FileUploadParser,)
     def post(self, request, filename, format=None):
         up_file = request.data['file']
-        result = handle_uploaded_file(up_file,yolo)
+        np_image = np.asarray(bytearray(up_file.read()), dtype="uint8")
+        image = cv2.imdecode(np_image, cv2.IMREAD_COLOR)
+        result = handle_memory_image(image,yolo)
         return Response({'status':200,'result':result})
 
 
@@ -55,4 +57,8 @@ def handle_uploaded_file(f,yolo):
     ## preload weights
     result = yolo.predict(file_path)
 
+    return result
+
+def handle_memory_image(f,yolo):
+    result = yolo.predict_imgcv(f)
     return result
