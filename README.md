@@ -15,7 +15,7 @@ please follow yolomodel repo and make sure environment is properly set up
 #### run server 
 ```
 cd [RESTYolo root]
-python python manage.py runserver 0.0.0.0:8080
+python manage.py runserver 0.0.0.0:8080
 ```
 
 #### sample request 
